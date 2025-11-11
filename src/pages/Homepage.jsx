@@ -702,7 +702,7 @@ export default function Homepage() {
             Trusted by
           </h3>
           <h2 className="text-2xl md:text-3xl font-extrabold mt-2">
-            Banks, NBFCs & Fintechs
+            Banks, NBFCs & Fintechs <span className="text-[9px] font-medium border-2 text-white bg-red-500 border-red-500 rounded-full p-1">Powered by Konexions</span>
           </h2>
           <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
             We partner with a wide ecosystem of financial institutions and
