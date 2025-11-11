@@ -6,6 +6,7 @@ import {
   Lightbulb,
   Users,
   HeartHandshake,
+  ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -195,7 +196,7 @@ export default function AboutUs() {
         </div>
       </motion.section>
 
-      {/* LEADERSHIP */}
+      {/* LEADERSHIP - UPDATED */}
       <motion.section
         variants={fadeUp}
         initial="hidden"
@@ -208,42 +209,114 @@ export default function AboutUs() {
           <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
             Meet the visionaries driving Fyntegra’s mission to transform lending with technology and trust.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Amit Sharma",
-                role: "CEO & Founder",
-                desc: "With over 15 years in fintech, Amit leads Fyntegra’s vision to blend AI and human expertise.",
-                image: assets.person1,
-              },
-              {
-                name: "Priya Gupta",
-                role: "CTO",
-                desc: "Priya drives our AI and tech innovation, ensuring scalable and secure platforms.",
-                image: assets.person2,
-              },
-              {
-                name: "Rahul Mehra",
-                role: "Head of Compliance",
-                desc: "Rahul ensures our solutions meet RBI standards with robust governance.",
-                image: assets.person3,
-              },
-            ].map((member, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.03 }}
-                className="bg-white rounded-xl shadow-md border border-gray-100 p-6 text-center hover:shadow-xl hover:border-red-200 transition-all duration-300"
-              >
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Nitin Chopra */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+            >
+              <div className="flex items-center gap-5 mb-6">
                 <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-4 border-red-100"
+                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl object-cover"
+                  src={assets.nitin}
+                  alt="Nitin Chopra"
                 />
-                <h4 className="font-semibold text-red-600">{member.name}</h4>
-                <p className="text-sm text-gray-600 mb-2">{member.role}</p>
-                <p className="text-sm text-gray-500">{member.desc}</p>
-              </motion.div>
-            ))}
+                <div>
+                  <h3 className="text-2xl font-bold text-black">
+                    Nitin Chopra
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Chairman, Konexions • Strategic Advisor, Fyntegra
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Nitin Chopra is the Founder & Chairman of{" "}
+                <strong>Konexions</strong>, one of India’s most established BPM
+                networks — now clocking{" "}
+                <strong>₹500 Cr+ in annual revenue</strong> with a clear roadmap
+                to <strong>₹2,500 Cr</strong> through its strategic merger with
+                Fyntegra.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                With over two decades of leadership experience across customer
+                lifecycle management, collections, and digital transformation,
+                he has scaled Konexions into a trusted partner for India’s top
+                banks, NBFCs, and fintechs.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                At <strong>Fyntegra</strong>, he serves as Strategic Advisor &
+                Chairman, guiding enterprise governance, multi-site delivery,
+                and compliance frameworks that blend traditional operational
+                depth with AI-driven automation.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="https://www.linkedin.com/in/nitin-chopra-7b60a380/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Connect on LinkedIn
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+
+            {/* Farooq Patel */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+            >
+              <div className="flex items-center gap-5 mb-6">
+                <img
+                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl object-cover"
+                  src={assets.farooq}
+                  alt="Farooq Patel"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold text-black">
+                    Farooq Patel
+                  </h3>
+                  <p className="text-gray-600 font-medium">
+                    Founder & CEO, Fyntegra (Backed by Konexions)
+                  </p>
+                </div>
+              </div>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Farooq Patel is the Founder & CEO of <strong>Fyntegra</strong>,
+                an AI-driven BPO platform backed by Konexions. Fyntegra is
+                redefining how banks, NBFCs, and fintechs scale collections,
+                sales, and customer experience through a seamless blend of human
+                expertise and intelligent automation.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Before founding Fyntegra, Farooq held leadership roles at{" "}
+                <strong>Fibe (EarlySalary)</strong>, where he led CX, Sales,
+                BNPL, and Cards — helping the business achieve{" "}
+                <strong>2x to 10x growth</strong>
+                through operational efficiency, automation, and people
+                excellence.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Earlier at <strong>JP Morgan</strong>, he played multiple roles
+                across customer experience, recruiting, and operations, gaining
+                deep exposure to global banking processes and large-scale
+                execution.
+              </p>
+              <div className="mt-8">
+                <a
+                  href="https://www.linkedin.com/in/farooq-patel-b2182524a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Connect on LinkedIn
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -261,14 +334,10 @@ export default function AboutUs() {
           <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
             We’re proud to make a difference in the financial ecosystem through innovation and partnerships.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
               <div className="text-3xl font-bold text-red-600">120+</div>
               <p className="text-gray-600 mt-2">Banks & NBFCs partnered</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-              <div className="text-3xl font-bold text-red-600">5000+</div>
-              <p className="text-gray-600 mt-2">Loans processed monthly</p>
             </div>
             <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
               <div className="text-3xl font-bold text-red-600">85%</div>
