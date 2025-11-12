@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { IdCard, BrainCircuit, Users, TrendingUp } from "lucide-react";
+import { IdCard, BrainCircuit, Users, TrendingUp, PhoneCall, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const fadeUp = {
@@ -11,26 +11,38 @@ const fadeUp = {
 export default function Solutions() {
   const solutions = [
     {
+      title: "Fyntegra Shield (Badging & Branded Calls)",
+      desc: "Display KYC-verified brand name/logo with a trust badge to counter spam labels and lift answer rates.",
+      icon: <Shield className="w-8 h-8 text-red-600" />,
+      url: "/solutions/shield",
+    },
+    {
+      title: "Fyntegra Stream (Regulated 140/160 Access)",
+      desc: "TRAI/RBI-aligned routing for Promotional (140) and Service/Transactional (160) voice traffic with DLT disclosures.",
+      icon: <PhoneCall className="w-8 h-8 text-red-600" />,
+      url: "/solutions/stream",
+    },
+    {
       title: "Customer Experience & Sales",
-      desc: "AI-driven tools to enhance engagement, boost sales, and improve satisfaction.",
+      desc: "Engage across voice, chat, WhatsApp, email, and social. Manage conversions, onboarding, and retention.",
       icon: <Users className="w-8 h-8 text-red-600" />,
       url: "/solutions/cx-sales",
     },
     {
       title: "Collections & Recovery",
-      desc: "Data-driven workflows to optimize recovery and maintain customer trust.",
+      desc: "Recover better and faster with an AI + human hybrid model for early-bucket and soft collections.",
       icon: <TrendingUp className="w-8 h-8 text-red-600" />,
       url: "/solutions/collections",
     },
     {
       title: "Compliance & Verification",
-      desc: "Streamlined KYC and fraud detection for RBI compliance and audits.",
+      desc: "Stay audit‑ready with KYC automation, maker‑checker workflows, and RBI LSP‑aligned governance.",
       icon: <IdCard className="w-8 h-8 text-red-600" />,
       url: "/solutions/compliance",
     },
     {
       title: "AI + SaaS Tools",
-      desc: "AI models and SaaS for risk assessment, analytics, and operations.",
+      desc: "Bundle AI SaaS like WhatsApp/Voice bots, GenAI ticket automation, ORM desk, and analytics dashboards.",
       icon: <BrainCircuit className="w-8 h-8 text-red-600" />,
       url: "/solutions/ai-saas",
     },
@@ -103,7 +115,7 @@ export default function Solutions() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-extrabold text-center text-black"
         >
-          LSP Solutions for <span className="text-red-600">Banks, NBFCs & Fintechs</span>
+          Solutions  for <span className="text-red-600">Banks, NBFC , Telcos & Fintechs</span>
         </motion.h2>
         <motion.p
           variants={fadeUp}
@@ -113,7 +125,7 @@ export default function Solutions() {
           transition={{ delay: 0.2 }}
           className="mt-4 text-gray-600 max-w-3xl mx-auto text-center leading-relaxed"
         >
-          Fyntegra combines AI-driven automation with human delivery expertise to help lenders improve disbursals, reduce NPAs, and stay compliant with RBI’s LSP framework.
+          Fyntegra combines AI‑driven automation with human delivery expertise to help lenders improve disbursals, reduce NPAs, and stay compliant with RBI’s LSP framework.
         </motion.p>
 
         {/* Solutions Section */}
@@ -122,7 +134,7 @@ export default function Solutions() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
         >
           {solutions.map((s, i) => (
             <motion.div

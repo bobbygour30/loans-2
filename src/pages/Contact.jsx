@@ -27,17 +27,17 @@ export default function Contact() {
     },
     {
       title: "Call Us",
-      desc: "+91-123-456-7890",
+      desc: "+919355257095",
       icon: <Phone className="w-8 h-8 text-red-600" />,
       action: (
-        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-red-600 hover:underline">
+        <a href="tel:+919355257095" className="mt-4 inline-block text-sm text-red-600 hover:underline">
           Call Now
         </a>
       ),
     },
     {
       title: "Visit Us",
-      desc: "123 Fintech Hub, Mumbai, MH 400001",
+      desc: "I-9 ,Lajpat Nagar II, Lajpat Nagar, New Delhi, Delhi 110024",
       icon: <MapPin className="w-8 h-8 text-red-600" />,
       action: (
         <a href="#map" className="mt-4 inline-block text-sm text-red-600 hover:underline">
@@ -273,8 +273,9 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Map Placeholder */}
+        {/* Map Section - Simple Google Maps Embed (No API Key Required) */}
         <motion.div
+          id="map"
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
@@ -282,8 +283,18 @@ export default function Contact() {
           className="mt-16"
         >
           <h3 className="text-2xl font-semibold text-center mb-6 text-black">Our Location</h3>
-          <div className="bg-gray-50 h-64 rounded-xl flex items-center justify-center border border-gray-200">
-            <p className="text-gray-600 font-medium">Interactive Map Placeholder (123 Fintech Hub, Mumbai, MH 400001)</p>
+          <div className="w-full h-96 rounded-xl overflow-hidden border border-gray-200 shadow-md">
+            <iframe
+              title="Google Map - I-9, Lajpat Nagar II, New Delhi"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              style={{ border: 0 }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.989791115557!2d77.24177731508173!3d28.56705688243738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3b9c4e2f5b7%3A0x9a8f7a7f7a7f7a7f!2sI-9%2C%20Lajpat%20Nagar%20II%2C%20New%20Delhi%2C%20Delhi%20110024!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </motion.div>
 

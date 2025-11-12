@@ -7,6 +7,12 @@ import {
   Users,
   HeartHandshake,
   ArrowRight,
+  Globe,
+  Zap,
+  Target,
+  Building2,
+  TrendingUp,
+  Sparkles,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -15,367 +21,437 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
+const stagger = {
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 export default function AboutUs() {
+  const timeline = [
+    {
+      year: "2007",
+      title: "A Vision Takes Shape",
+      desc: "Nitin Chopra, driven to create jobs for India’s youth, co-founds Konexions with Shivani Chopra. What begins in their home basement soon evolves into one of India’s most trusted BPM brands.",
+      icon: <Sparkles className="w-6 h-6" />,
+    },
+    {
+      year: "2010",
+      title: "Momentum Builds",
+      desc: "Konexions secures five major client logos and scales to a 500-employee organization.",
+      icon: <TrendingUp className="w-6 h-6" />,
+    },
+    {
+      year: "2015",
+      title: "Global Partnerships",
+      desc: "Serving 10 international clients and expanding into new sectors with precision and agility.",
+      icon: <Globe className="w-6 h-6" />,
+    },
+    {
+      year: "2019",
+      title: "Tech Expansion",
+      desc: "Acquisition of Tech Soft Corporation, marking entry into the IT, software, and automation domain.",
+      icon: <Zap className="w-6 h-6" />,
+    },
+    {
+      year: "2021",
+      title: "Next-Gen Workspaces",
+      desc: "Launch of ultra-premium delivery centers in Delhi, Gurgaon, Pune, Mumbai, and Bangalore, setting new benchmarks for culture and operational excellence.",
+      icon: <Building2 className="w-6 h-6" />,
+    },
+    {
+      year: "2024",
+      title: "Going Global",
+      desc: "Becomes one of the first privately held Indian BPMs to open an international office in Dubai, signaling global scale.",
+      icon: <Target className="w-6 h-6" />,
+    },
+    {
+      year: "2025+",
+      title: "Fyntegra Is Born",
+      desc: "With a ₹500 Cr+ foundation and a bold vision to scale to ₹2,500 Cr, Fyntegra emerges as the AI-driven extension of Konexions — fusing human expertise with automation, analytics, and voicebots to redefine outsourcing for the next decade.",
+      highlight: true,
+      badge: "AI-Led Future",
+    },
+  ];
+
   return (
-    <div className="bg-white text-black min-h-screen mt-20">
-      {/* HERO */}
-      <header className="relative bg-gradient-to-r from-black to-red-600 text-white py-28 px-6 md:px-12 overflow-hidden">
-        <div className="max-w-6xl mx-auto text-center relative z-10">
+    <div className="bg-white text-black min-h-screen mt-20 overflow-hidden">
+      {/* HERO SECTION */}
+      <header className="relative bg-gradient-to-br from-black via-red-900 to-red-700 text-white py-32 px-6 md:px-12 overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-3xl"></div>
+        <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.h1
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="text-3xl md:text-5xl font-extrabold leading-tight"
+            className="text-4xl md:text-6xl font-extrabold leading-tight"
           >
-            About <span className="underline decoration-white/60">Fyntegra</span>
+            Our Journey
+            <br />
+            <span className="text-red-400 text-3xl md:text-5xl block mt-2">
+              The Konexions Legacy → Fyntegra Future
+            </span>
           </motion.h1>
           <motion.p
             variants={fadeUp}
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="mt-4 text-gray-200 max-w-2xl mx-auto"
+            className="mt-6 text-lg md:text-xl text-gray-200 max-w-4xl mx-auto font-light"
           >
-            Transforming financial services by integrating cutting-edge AI, robust compliance, and empathetic human expertise to empower lenders and borrowers alike.
+            From a living-room vision to AI-driven, enterprise-scale delivery.
           </motion.p>
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="show"
             transition={{ delay: 0.5 }}
-            className="mt-6 flex justify-center gap-3 flex-wrap"
+            className="mt-8 flex justify-center gap-4 flex-wrap"
           >
             <Link
               to="/contact"
-              className="px-6 py-3 bg-white text-red-600 rounded-full font-semibold shadow hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 bg-red-600 text-white rounded-full font-bold shadow-lg hover:bg-red-700 hover:scale-105 transition-all duration-300 flex items-center gap-2"
             >
-              Get in Touch
+              Get in Touch <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              to="/partner-with-us"
-              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
+            <a
+              href="https://jumbokonexions.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 border-2 border-white/60 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
             >
-              Request a Demo
-            </Link>
+              Visit Konexions
+            </a>
           </motion.div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
       </header>
 
-      {/* OUR STORY */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6"
-      >
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-6">Our Story</h2>
-          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Fyntegra was born to revolutionize lending by bridging technology and trust. Our journey combines innovation, compliance, and customer focus to redefine financial experiences.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <img
-              src={assets.team}
-              alt="Our Team"
-              className="rounded-2xl shadow-xl w-full object-cover max-h-96"
-            />
-            <div className="space-y-4">
-              <p className="text-gray-600 leading-relaxed">
-                Founded in 2018, Fyntegra started with a vision to simplify lending processes for banks, NBFCs, and fintechs across India. By leveraging AI-driven automation and human expertise, we tackled inefficiencies in loan disbursals, compliance, and customer experience.
-              </p>
-              <p className="text-gray-600">
-                Today, we partner with over 120 financial institutions, processing thousands of loans with an average disbursal time of 24 hours and an NPS of 85%. Our commitment to compliance and innovation drives us to deliver seamless, scalable solutions.
-              </p>
-            </div>
-          </div>
-          {/* Timeline */}
-          <div className="mt-12 flex flex-col items-center">
-            <h3 className="text-xl font-semibold text-center mb-6">Our Journey</h3>
-            <div className="space-y-6">
-              {[
-                { year: 2018, milestone: "Fyntegra founded with a mission to transform lending." },
-                { year: 2020, milestone: "Launched AI-driven KYC and verification modules." },
-                { year: 2022, milestone: "Partnered with 50+ banks and NBFCs across India." },
-                { year: 2024, milestone: "Achieved 85% NPS and processed 5000+ loans monthly." },
-                { year: 2025, milestone: "Expanded to offer omnichannel collections and analytics." },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  className="flex items-center gap-4"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-semibold">
-                    {item.year}
-                  </div>
-                  <div className="text-gray-600">{item.milestone}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* MISSION + VISION */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6 bg-gray-50"
-      >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="p-8 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-            <h3 className="text-xl font-semibold mb-3 text-red-600">Our Mission</h3>
-            <p className="text-gray-600">
-              To empower financial institutions with compliant, technology-driven solutions that streamline lending, enhance customer experiences, and ensure trust and transparency.
-            </p>
-          </div>
-          <div className="p-8 bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-            <h3 className="text-xl font-semibold mb-3 text-red-600">Our Vision</h3>
-            <p className="text-gray-600">
-              To become India’s leading lending solutions partner, delivering AI-powered, human-centric platforms that redefine speed, compliance, and empathy in financial services.
-            </p>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* VALUES */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6"
-      >
+      {/* FYntegra IS BORN */}
+      <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-6">
-            Our Core Values
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-            Our principles define how we innovate, collaborate, and deliver
-            value to our partners and customers.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-extrabold text-black mb-6">
+              Fyntegra is Born
+            </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              Farooq Patel and Nitin Chopra come together to grow an international,{" "}
+              <span className="text-red-600 font-semibold">AI-led BPO</span> with{" "}
+              <span className="underline decoration-red-500">360° solutions</span>.
+            </p>
+            <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+              Fyntegra is built at the intersection of enterprise-grade BPM scale and AI-native operations — uniting Konexions’ legacy with a productized, automation-first future.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6"
+          >
             {[
-              {
-                title: "Integrity",
-                desc: "Upholding the highest standards of compliance and transparency in all operations.",
-                icon: <ShieldCheck className="w-8 h-8 text-red-600" />,
-              },
-              {
-                title: "Innovation",
-                desc: "Pioneering AI-driven solutions while maintaining human oversight for precision.",
-                icon: <Lightbulb className="w-8 h-8 text-red-600" />,
-              },
-              {
-                title: "Customer Centricity",
-                desc: "Prioritizing the needs of lenders and borrowers to create seamless experiences.",
-                icon: <Users className="w-8 h-8 text-red-600" />,
-              },
-              {
-                title: "Collaboration",
-                desc: "Fostering partnerships to drive mutual success and innovation in lending.",
-                icon: <HeartHandshake className="w-8 h-8 text-red-600" />,
-              },
-            ].map((v, i) => (
+              "Konexions foundation and rapid scale",
+              "Global clients and tech expansion",
+              "Premium delivery centers and Dubai office",
+              "Fyntegra: AI-led BPO embedded credit launching soon",
+            ].map((item, i) => (
               <motion.div
                 key={i}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="p-6 rounded-xl bg-gradient-to-tr from-white to-red-50 shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition-all duration-300"
+                variants={fadeUp}
+                className="p-5 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-300 transition-all duration-300 text-left"
               >
-                <div className="flex justify-center mb-3">{v.icon}</div>
-                <h3 className="text-lg font-semibold text-black mb-2">{v.title}</h3>
-                <p className="text-gray-600 text-sm">{v.desc}</p>
+                <div className="w-10 h-10 bg-red-100 text-red-600 rounded-full flex items-center justify-center mb-3">
+                  <span className="font-bold text-sm">{i + 1}</span>
+                </div>
+                <p className="text-sm text-gray-700 font-medium">{item}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-10 flex justify-center items-center gap-3 text-sm text-gray-600"
+          >
+            <span className="px-4 py-2 bg-red-50 text-red-700 rounded-full font-medium">
+              Embedded Credit Launching Soon
+            </span>
+            <ArrowRight className="w-5 h-5 text-red-600 animate-pulse" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* TIMELINE */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-extrabold text-center mb-16"
+          >
+            From Vision to Global Scale
+          </motion.h2>
+
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-red-200 via-red-400 to-red-600 h-full hidden md:block"></div>
+
+            {timeline.map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className={`relative flex items-center mb-12 md:mb-16 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                } flex-col`}
+              >
+                {/* Timeline Item */}
+                <div
+                  className={`w-full md:w-1/2 ${
+                    i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"
+                  }`}
+                >
+                  <div
+                    className={`p-6 rounded-2xl shadow-lg border ${
+                      item.highlight
+                        ? "bg-gradient-to-r from-red-600 to-red-700 text-white border-red-800"
+                        : "bg-white border-gray-200"
+                    } hover:shadow-2xl transition-all duration-300`}
+                  >
+                    {item.badge && (
+                      <span className="inline-block px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full mb-3">
+                        {item.badge}
+                      </span>
+                    )}
+                    <h3 className="text-xl md:text-2xl font-bold flex items-center gap-3 justify-end md:justify-start">
+                      <span className="text-red-400">{item.year}</span>
+                      {item.title}
+                    </h3>
+                    <p
+                      className={`mt-3 text-sm md:text-base leading-relaxed ${
+                        item.highlight ? "text-white/90" : "text-gray-600"
+                      }`}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Timeline Dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white rounded-full border-4 border-red-600 flex items-center justify-center shadow-xl z-10 hidden md:flex">
+                  <div className="text-red-600">{item.icon}</div>
+                </div>
+
+                {/* Mobile Year */}
+                <div className="md:hidden text-center mt-4">
+                  <span className="text-2xl font-bold text-red-600">{item.year}</span>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* LEADERSHIP - UPDATED */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6 bg-gray-50"
-      >
+      {/* WHAT THIS MEANS FOR CUSTOMERS */}
+      <section className="py-20 px-6 bg-gradient-to-r from-red-50 to-orange-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-extrabold mb-6"
+          >
+            What This Means for Customers
+          </motion.h2>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12"
+          >
+            {[
+              {
+                title: "AI-Led International BPO",
+                desc: "360° solutions powered by intelligent automation and global delivery.",
+                icon: <Zap className="w-10 h-10" />,
+              },
+              {
+                title: "Fyntegra Dialogue: VTI Platform",
+                desc: "Voice, Text, and Intent-driven AI for seamless customer interactions.",
+                icon: <Users className="w-10 h-10" />,
+              },
+              {
+                title: "Fyntegra Shield & Stream",
+                desc: "Real-time compliance, fraud detection, and streamlined operations.",
+                icon: <ShieldCheck className="w-10 h-10" />,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{ y: -8, scale: 1.03 }}
+                className="p-8 bg-white rounded-2xl shadow-lg border border-gray-100 hover:border-red-300 hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="text-red-600 mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-bold shadow-xl animate-pulse">
+              <Sparkles className="w-6 h-6" />
+              Embedded Credit Rails via Platform — Launching Soon
+              <Sparkles className="w-6 h-6" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* LEADERSHIP */}
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-6">Our Leadership</h2>
-          <p className="text-gray-600 text-center mb-10 max-w-3xl mx-auto leading-relaxed">
-            Meet the visionaries driving Fyntegra’s mission to transform lending with technology and trust.
-          </p>
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-extrabold text-center mb-16"
+          >
+            Visionary Leadership
+          </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {/* Nitin Chopra */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+              className="group p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-gray-200 shadow-xl hover:shadow-2xl hover:border-red-300 transition-all duration-500"
             >
               <div className="flex items-center gap-5 mb-6">
                 <img
-                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl object-cover"
                   src={assets.nitin}
                   alt="Nitin Chopra"
+                  className="w-24 h-24 rounded-2xl object-cover shadow-md border-2 border-white"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-black">
-                    Nitin Chopra
-                  </h3>
-                  <p className="text-gray-600 font-medium">
+                  <h3 className="text-2xl font-bold text-black">Nitin Chopra</h3>
+                  <p className="text-red-600 font-semibold">
                     Chairman, Konexions • Strategic Advisor, Fyntegra
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Nitin Chopra is the Founder & Chairman of{" "}
-                <strong>Konexions</strong>, one of India’s most established BPM
-                networks — now clocking{" "}
-                <strong>₹500 Cr+ in annual revenue</strong> with a clear roadmap
-                to <strong>₹2,500 Cr</strong> through its strategic merger with
-                Fyntegra.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                With over two decades of leadership experience across customer
-                lifecycle management, collections, and digital transformation,
-                he has scaled Konexions into a trusted partner for India’s top
-                banks, NBFCs, and fintechs.
-              </p>
               <p className="text-gray-700 leading-relaxed">
-                At <strong>Fyntegra</strong>, he serves as Strategic Advisor &
-                Chairman, guiding enterprise governance, multi-site delivery,
-                and compliance frameworks that blend traditional operational
-                depth with AI-driven automation.
+                Founder of <strong>Konexions</strong> — a ₹500 Cr+ BPM powerhouse with a roadmap to ₹2,500 Cr. With 20+ years in customer lifecycle, collections, and digital transformation, he has built trust with India’s top banks and fintechs.
               </p>
-              <div className="mt-8">
-                <a
-                  href="https://www.linkedin.com/in/nitin-chopra-7b60a380/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Connect on LinkedIn
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                As <strong>Strategic Advisor at Fyntegra</strong>, he drives enterprise governance, multi-site delivery, and AI-integrated compliance.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/nitin-chopra-7b60a380/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-all duration-300"
+              >
+                Connect on LinkedIn <ArrowRight className="w-5 h-5" />
+              </a>
             </motion.div>
 
             {/* Farooq Patel */}
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="p-8 bg-white rounded-2xl border border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition"
+              className="group p-8 bg-gradient-to-br from-red-50 to-white rounded-3xl border border-gray-200 shadow-xl hover:shadow-2xl hover:border-red-300 transition-all duration-500"
             >
               <div className="flex items-center gap-5 mb-6">
                 <img
-                  className="w-20 h-20 bg-gray-200 border-2 border-dashed rounded-xl object-cover"
                   src={assets.farooq}
                   alt="Farooq Patel"
+                  className="w-24 h-24 rounded-2xl object-cover shadow-md border-2 border-white"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-black">
-                    Farooq Patel
-                  </h3>
-                  <p className="text-gray-600 font-medium">
-                    Founder & CEO, Fyntegra (Backed by Konexions)
+                  <h3 className="text-2xl font-bold text-black">Farooq Patel</h3>
+                  <p className="text-red-600 font-semibold">
+                    Founder & CEO, Fyntegra
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Farooq Patel is the Founder & CEO of <strong>Fyntegra</strong>,
-                an AI-driven BPO platform backed by Konexions. Fyntegra is
-                redefining how banks, NBFCs, and fintechs scale collections,
-                sales, and customer experience through a seamless blend of human
-                expertise and intelligent automation.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Before founding Fyntegra, Farooq held leadership roles at{" "}
-                <strong>Fibe (EarlySalary)</strong>, where he led CX, Sales,
-                BNPL, and Cards — helping the business achieve{" "}
-                <strong>2x to 10x growth</strong>
-                through operational efficiency, automation, and people
-                excellence.
-              </p>
               <p className="text-gray-700 leading-relaxed">
-                Earlier at <strong>JP Morgan</strong>, he played multiple roles
-                across customer experience, recruiting, and operations, gaining
-                deep exposure to global banking processes and large-scale
-                execution.
+                Leading <strong>Fyntegra</strong> — the AI-native evolution of Konexions. Previously at <strong>Fibe</strong>, scaled CX, Sales, and BNPL from 2x to 10x growth through automation and operational excellence.
               </p>
-              <div className="mt-8">
-                <a
-                  href="https://www.linkedin.com/in/farooq-patel-b2182524a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600 text-white rounded-full font-medium hover:bg-red-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Connect on LinkedIn
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Former <strong>JP Morgan</strong> leader with deep expertise in global banking, recruiting, and large-scale execution.
+              </p>
+              <a
+                href="https://www.linkedin.com/in/farooq-patel-b2182524a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-all duration-300"
+              >
+                Connect on LinkedIn <ArrowRight className="w-5 h-5" />
+              </a>
             </motion.div>
           </div>
         </div>
-      </motion.section>
-
-      {/* OUR IMPACT */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6"
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-6">Our Impact</h2>
-          <p className="text-gray-600 mb-8 max-w-3xl mx-auto">
-            We’re proud to make a difference in the financial ecosystem through innovation and partnerships.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-              <div className="text-3xl font-bold text-red-600">120+</div>
-              <p className="text-gray-600 mt-2">Banks & NBFCs partnered</p>
-            </div>
-            <div className="p-6 bg-white rounded-xl shadow-md border border-gray-100 hover:shadow-xl hover:border-red-200 transition">
-              <div className="text-3xl font-bold text-red-600">85%</div>
-              <p className="text-gray-600 mt-2">Average NPS score</p>
-            </div>
-          </div>
-        </div>
-      </motion.section>
+      </section>
 
       {/* CTA */}
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-16 px-6"
-      >
-        <div className="max-w-4xl mx-auto bg-gradient-to-r from-black to-red-600 text-white p-10 rounded-2xl shadow-xl text-center">
-          <h2 className="text-2xl md:text-3xl font-extrabold">Partner with Fyntegra</h2>
-          <p className="mt-3 text-white/90 max-w-2xl mx-auto">
-            Join us to deliver lending solutions that combine compliance, speed, and customer-centric innovation. Let’s shape the future of finance together.
-          </p>
-          <div className="mt-6 flex justify-center gap-4 flex-wrap">
-            <Link
-              to="/contact"
-              className="px-6 py-3 bg-white text-red-600 rounded-full font-semibold shadow hover:scale-105 transition-all duration-300"
-            >
-              Contact Us
-            </Link>
-            <Link
-              to="/partner-with-us"
-              className="px-6 py-3 border border-white/50 text-white rounded-full font-semibold hover:bg-white/10 transition-all duration-300"
-            >
-              Request Demo
-            </Link>
+      <section className="py-20 px-6">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto bg-gradient-to-r from-black via-red-900 to-red-700 text-white p-12 rounded-3xl shadow-2xl text-center relative overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-black/20"></div>
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold">
+              Scale with AI. Deliver with Trust.
+            </h2>
+            <p className="mt-4 text-lg text-white/90 max-w-3xl mx-auto">
+              Partner with Fyntegra to unlock AI-led BPO, embedded credit, and 360° financial solutions — backed by Konexions’ proven legacy.
+            </p>
+            <div className="mt-8 flex justify-center gap-4 flex-wrap">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-white text-red-600 rounded-full font-bold shadow-lg hover:scale-105 transition-all duration-300"
+              >
+                Start the Conversation
+              </Link>
+              <Link
+                to="/partner-with-us"
+                className="px-8 py-4 border-2 border-white text-white rounded-full font-bold hover:bg-white/10 transition-all duration-300"
+              >
+                Request Demo
+              </Link>
+            </div>
           </div>
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
     </div>
   );
 }
