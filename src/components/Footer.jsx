@@ -38,8 +38,8 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-red-500">Contact Us</h3>
           <p className="text-gray-400 text-sm">Email: support@fyntegra.in</p>
-          <p className="text-gray-400 text-sm">Phone: +91-123-456-7890</p>
-          <p className="text-gray-400 text-sm">Address: 123 Fintech Lane, Mumbai, India</p>
+          <p className="text-gray-400 text-sm">Phone: +919355257095</p>
+          <p className="text-gray-400 text-sm">Address: I-9 ,Lajpat Nagar II, Lajpat Nagar, New Delhi, Delhi 110024</p>
         </div>
 
         {/* Newsletter */}

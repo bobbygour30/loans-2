@@ -45,7 +45,7 @@ export default function Support() {
       desc: "Speak directly with our experts at +91-123-456-7890 for immediate help.",
       icon: <Phone className="w-8 h-8 text-red-600" />,
       action: (
-        <a href="tel:+911234567890" className="mt-4 inline-block text-sm text-red-600 hover:underline">
+        <a href="tel:+919355257095" className="mt-4 inline-block text-sm text-red-600 hover:underline">
           Call Now
         </a>
       ),

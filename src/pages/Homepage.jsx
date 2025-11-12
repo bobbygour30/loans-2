@@ -1539,15 +1539,15 @@ export default function Homepage() {
               <div className="space-y-4 text-gray-700 mb-6">
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-red-600" />
-                  <span>hello@fyntegra.com</span>
+                  <span>support@fyntegra.com</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-red-600" />
-                  <span>+91-XXXXXXXXXX</span>
+                  <span>+919355257095</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="w-5 h-5 text-red-600" />
-                  <span>Pune • Delhi NCR • Bengaluru</span>
+                  <span>I-9 ,Lajpat Nagar II, Lajpat Nagar, New Delhi, Delhi 110024</span>
                 </div>
               </div>
               <div className="bg-white p-5 rounded-xl border border-gray-100">
