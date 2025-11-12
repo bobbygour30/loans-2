@@ -50,6 +50,8 @@ import {
   LineChart,
   Car,
 } from "lucide-react";
+import Slider from "../components/Slider1";
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -438,7 +440,7 @@ export default function Homepage() {
         viewport={{ once: true }}
         className="py-16 px-6 -mt-10"
       >
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-3 min-h-[60vh]">
+        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-3 min-h-[80vh]">
           <div className="p-8 md:p-10 bg-gradient-to-br from-white to-gray-50 flex flex-col items-center justify-center">
             <h3 className="text-2xl font-extrabold text-black">
               Large enough to Deliver Agile enough to Care
@@ -690,36 +692,7 @@ export default function Homepage() {
         </div>
       </motion.section>
 
-      <motion.section
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="py-12 px-6"
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <h3 className="text-lg text-gray-600 uppercase tracking-wider">
-            Trusted by
-          </h3>
-          <h2 className="text-2xl md:text-3xl font-extrabold mt-2">
-            Banks, NBFCs & Fintechs <span className="text-[9px] font-medium border-2 text-white bg-red-500 border-red-500 rounded-full p-1">Powered by Konexions</span>
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-            We partner with a wide ecosystem of financial institutions and
-            fintechs
-          </p>
-          <div className="mt-8 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center justify-center">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="p-4 bg-white/60 rounded-lg flex items-center justify-center shadow-sm"
-              >
-                <span className="text-gray-400 text-sm">Partner</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+      <Slider />
 
       <motion.section
         variants={fadeUp}
